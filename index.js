@@ -1,14 +1,21 @@
-const container = document.getElementById("container");
+function createGrid(rows, columns) {
+    const container = document.getElementById("container");
 
-function createGrid() {
-    for(let i = 0; i < 256; i++) {
-        let div = document.createElement("div");
-        div.style.width = "25px";
-        div.style.height = "25px";
-        div.style.border = "solid black";
-        div.style.borderRadius = "4px"
-        container.appendChild(div);
+    for (let i = 0; i < rows; i++) {
+        let row = document.createElement("div");
+        row.className = "row";
+        container.appendChild(row);
+
+        for (let j = 0; j < columns; j++) {
+            let div = document.createElement("div");
+            div.className = "cell";
+            div.style.width = "25px";
+            div.style.height = "25px";
+            div.style.border = "2px solid black";
+            div.style.margin = "1px";
+            row.appendChild(div);
+        }
     }
 }
 
-createGrid(container);
+createGrid(16, 16);
