@@ -19,3 +19,9 @@ function createGrid(rows, columns) {
 }
 
 createGrid(16, 16);
+
+document.querySelectorAll(".cell").forEach(cell => {
+    cell.addEventListener("mouseover", function () {
+        cell.style.backgroundColor = "black";
+    })
+})
