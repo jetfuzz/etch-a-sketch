@@ -1,6 +1,9 @@
-function createGrid(rows, columns) {
-    const container = document.getElementById("container");
+const container = document.getElementById("container");
+const smallBtn = document.getElementById("smallBtn");
+const mediumBtn = document.getElementById("mediumBtn");
+const largeBtn = document.getElementById("largeBtn");
 
+function createGrid(rows, columns) {
     for (let i = 0; i < rows; i++) {
         let row = document.createElement("div");
         row.className = "row";
@@ -12,12 +15,28 @@ function createGrid(rows, columns) {
             row.appendChild(div);
         }
     }
+    document.querySelectorAll(".cell").forEach(cell => {
+        cell.addEventListener("mouseover", function () {
+            cell.style.backgroundColor = "black";
+        })
+    })
 }
 
-createGrid(16, 16);
+createGrid(32, 32);
 
-document.querySelectorAll(".cell").forEach(cell => {
-    cell.addEventListener("mouseover", function () {
-        cell.style.backgroundColor = "black";
+function newGrid() {
+    smallBtn.addEventListener("click", () => {
+        container.innerHTML = "";
+        createGrid(16, 16);
     })
-})
+    mediumBtn.addEventListener("click", () => {
+        container.innerHTML = "";
+        createGrid(32, 32);
+    })
+    largeBtn.addEventListener("click", () => {
+        container.innerHTML = "";
+        createGrid(64, 64);
+    })
+}
+
+newGrid();
