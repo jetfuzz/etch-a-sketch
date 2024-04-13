@@ -4,6 +4,7 @@ const mediumBtn = document.getElementById("mediumBtn");
 const largeBtn = document.getElementById("largeBtn");
 
 function createGrid(rows, columns) {
+    container.innerHTML = "";
     for (let i = 0; i < rows; i++) {
         let row = document.createElement("div");
         row.className = "row";
@@ -26,15 +27,12 @@ createGrid(32, 32);
 
 function newGrid() {
     smallBtn.addEventListener("click", () => {
-        container.innerHTML = "";
         createGrid(16, 16);
     })
     mediumBtn.addEventListener("click", () => {
-        container.innerHTML = "";
         createGrid(32, 32);
     })
     largeBtn.addEventListener("click", () => {
-        container.innerHTML = "";
         createGrid(64, 64);
     })
 }

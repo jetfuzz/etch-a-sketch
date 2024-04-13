@@ -1,3 +1,7 @@
+html{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 #container {
     display: flex;
@@ -5,7 +9,8 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     max-width: 580px;
     width: 80%;
     height: auto;
@@ -17,7 +22,28 @@
 }
 
 .cell {
+    background-color: white;
     flex-grow: 1;
     aspect-ratio: 1;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+}
+
+#header {
+    font-size: 40px;
+    font-family: cursive;
+    font-style: italic;
+    letter-spacing: -1px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
 }
