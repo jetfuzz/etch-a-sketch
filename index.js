@@ -22,6 +22,20 @@ function gridColor() {
             })
         })
     })
+    defaultBtn.addEventListener("click", () => {
+        document.querySelectorAll(".cell").forEach(cell => {
+            cell.addEventListener("mouseover", function () {
+                cell.style.backgroundColor = "black";
+            })
+        })
+    })
+    eraseBtn.addEventListener("click", () => {
+        document.querySelectorAll(".cell").forEach(cell => {
+            cell.addEventListener("mouseover", function () {
+                cell.style.backgroundColor = "white";
+            })
+        })
+    })
 }
 
 function createGrid(rows, columns) {
