@@ -1,4 +1,13 @@
 const container = document.getElementById("container");
+const buttons = document.querySelectorAll(".button")
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
 
 function getRandomColor() {
     let letters = "0123456789ABCDEF";
@@ -54,8 +63,6 @@ function createGrid(rows, columns) {
     gridColor()
 }
 
-createGrid(32, 32);
-
 function newGrid() {
     smallBtn.addEventListener("click", () => {
         createGrid(16, 16);
@@ -68,4 +75,6 @@ function newGrid() {
     })
 }
 
+createGrid(32, 32);
 newGrid();
+buttonStyle();
