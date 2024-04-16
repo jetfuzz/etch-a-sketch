@@ -1,7 +1,28 @@
 const container = document.getElementById("container");
-const smallBtn = document.getElementById("smallBtn");
-const mediumBtn = document.getElementById("mediumBtn");
-const largeBtn = document.getElementById("largeBtn");
+
+function getRandomColor() {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function gridColor() {
+    document.querySelectorAll(".cell").forEach(cell => {
+        cell.addEventListener("mouseover", function () {
+            cell.style.backgroundColor = "black";
+        })
+    })
+    rgbBtn.addEventListener("click", () => {
+        document.querySelectorAll(".cell").forEach(cell => {
+            cell.addEventListener("mouseover", function () {
+                cell.style.backgroundColor = getRandomColor();
+            })
+        })
+    })
+}
 
 function createGrid(rows, columns) {
     container.innerHTML = "";
@@ -16,11 +37,7 @@ function createGrid(rows, columns) {
             row.appendChild(div);
         }
     }
-    document.querySelectorAll(".cell").forEach(cell => {
-        cell.addEventListener("mouseover", function () {
-            cell.style.backgroundColor = "black";
-        })
-    })
+    gridColor()
 }
 
 createGrid(32, 32);
