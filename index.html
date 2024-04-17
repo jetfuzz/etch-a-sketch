@@ -13,22 +13,18 @@
     <div id="container"></div>
 
     <div id="options">
-        <div id="leftOptions">
+       
             <div id="buttons">
                 <button class="button" id="defaultBtn">Default</button>
                 <button class="button" id="rgbBtn">Random Color</button>
                 <button class="button" id="eraseBtn">Eraser</button>
             </div>
-        </div>
 
-        <div id="rightOptions">
-            <p>Grid Size</p>
-            <div id="buttons">
-                <button class="button" id="smallBtn">Small</button>
-                <button class="button" id="mediumBtn">Medium</button>
-                <button class="button" id="largeBtn">Large</button>
+            <p id="slider-value">32 x 32</p>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="64" value="32" class="slider" id="slider">
             </div>
-        </div>
+        
     </div>
 
 </body>

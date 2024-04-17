@@ -1,5 +1,18 @@
 const container = document.getElementById("container");
 const buttons = document.querySelectorAll(".button")
+const slider = document.getElementById("slider");
+let currentGridColor = "default";
+
+slider.addEventListener("change", () => {
+    let gridSize = slider.value;
+    createGrid(gridSize, gridSize);
+    buttons.forEach(button => {
+        if (button.id !== 'defaultBtn') {
+            button.classList.remove('active');
+        }
+    });
+    document.getElementById("slider-value").innerHTML = `${gridSize} x ${gridSize}`
+})
 
     buttons.forEach(button => {
         button.addEventListener('click', function() {
@@ -21,7 +34,7 @@ function getRandomColor() {
 function gridColor() {
     document.querySelectorAll(".cell").forEach(cell => {
         cell.addEventListener("mouseover", function () {
-            cell.style.backgroundColor = "black";
+            cell.style.backgroundColor = "#333333";
         })
     })
     rgbBtn.addEventListener("click", () => {
@@ -34,7 +47,7 @@ function gridColor() {
     defaultBtn.addEventListener("click", () => {
         document.querySelectorAll(".cell").forEach(cell => {
             cell.addEventListener("mouseover", function () {
-                cell.style.backgroundColor = "black";
+                cell.style.backgroundColor = "#333333";
             })
         })
     })
@@ -77,4 +90,3 @@ function newGrid() {
 
 createGrid(32, 32);
 newGrid();
-buttonStyle();
