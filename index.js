@@ -1,26 +1,22 @@
 const container = document.getElementById("container");
 const buttons = document.querySelectorAll(".button")
 const slider = document.getElementById("slider");
-let currentGridColor = "default";
 
 slider.addEventListener("change", () => {
     let gridSize = slider.value;
     createGrid(gridSize, gridSize);
     buttons.forEach(button => {
-        if (button.id !== 'defaultBtn') {
-            button.classList.remove('active');
-        }
+        button.classList.remove('active');
     });
     document.getElementById("slider-value").innerHTML = `${gridSize} x ${gridSize}`
-})
+});
 
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            buttons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
     });
-
+});
 
 function getRandomColor() {
     let letters = "0123456789ABCDEF";
